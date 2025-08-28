@@ -9,9 +9,10 @@
 # sudo apt update -y
 # sudo apt install -y typora
 
+TARGET_ARCH=$(dpkg --print-architecture)
 # Install with db
 cd /tmp
-wget -O typora.deb "https://downloads.typora.io/linux/typora_1.10.8_amd64.deb"
+wget -O typora.deb "https://downloads.typora.io/linux/typora_1.10.8_${TARGET_ARCH}.deb"
 sudo apt install -y /tmp/typora.deb
 rm typora.deb
 cd -

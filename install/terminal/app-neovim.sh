@@ -1,7 +1,8 @@
 #!/bin/bash
 
+TARGET_ARCH=$([ "$(dpkg --print-architecture)" = "arm64" ] && echo "aarch64" || echo "x86_64")
 cd /tmp
-wget -O nvim.tar.gz "https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz"
+wget -O nvim.tar.gz "https://github.com/neovim/neovim/releases/download/stable/nvim-linux-${TARGET_ARCH}.tar.gz"
 tar -xf nvim.tar.gz
 sudo install nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
 sudo cp -R nvim-linux-x86_64/lib /usr/local/
