@@ -19,7 +19,7 @@ fi
 
 # Check if running on x86
 ARCH=$(uname -m)
-if [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "i686" ]; then
+if [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "i686" ] && [ "$ARCH" != "aarch64"]; then
   echo "$(tput setaf 1)Error: Unsupported architecture detected"
   echo "Current architecture: $ARCH"
   echo "This installation is only supported on x86 architectures (x86_64 or i686)."
